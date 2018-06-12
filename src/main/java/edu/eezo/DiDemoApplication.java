@@ -1,6 +1,9 @@
 package edu.eezo;
 
+import edu.eezo.controllers.ConstructorInjectedController;
 import edu.eezo.controllers.MyController;
+import edu.eezo.controllers.PropertyInjectedController;
+import edu.eezo.controllers.SetterInjectedController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -12,5 +15,9 @@ public class DiDemoApplication {
         ApplicationContext ctx = SpringApplication.run(DiDemoApplication.class, args);
         MyController controller = (MyController) ctx.getBean("myController");
         controller.hello();
+
+        System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
+        System.out.println(ctx.getBean(SetterInjectedController.class).sayHello());
+        System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
     }
 }

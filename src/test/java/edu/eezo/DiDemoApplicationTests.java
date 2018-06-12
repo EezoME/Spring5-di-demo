@@ -12,5 +12,4 @@ public class DiDemoApplicationTests {
     @Test
     public void contextLoads() {
     }
-
 }
